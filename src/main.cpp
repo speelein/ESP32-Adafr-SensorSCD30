@@ -3,12 +3,25 @@
 // Basic demo for readings from Adafruit SCD30
 #include <Adafruit_SCD30.h>
 #include "TCA9548.h"
+
+#include <Wire.h>
+#include <LiquidCrystal.h>
+
+
+#define   CONTRAST_PIN   9
+#define   BACKLIGHT_PIN  7
+#define   CONTRAST       110
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2, BACKLIGHT_PIN, POSITIVE );
+
+
 Adafruit_SCD30  scd30;
 
 
 TCA9548 MP(0x70);
 
 uint8_t channels = 0;
+
 
 
 // login
@@ -39,6 +52,24 @@ void setup(void) {
   Serial.print("Measurement Interval: "); 
   Serial.print(scd30.getMeasurementInterval()); 
   Serial.println(" seconds");
+
+// Switch on the backlight and LCD contrast levels
+  pinMode(CONTRAST_PIN, OUTPUT);
+  analogWrite ( CONTRAST_PIN, CONTRAST );
+
+  //lcd.setBacklightPin ( BACKLIGHT_PIN, POSITIVE );
+  //lcd.setBacklight ( HIGH );
+  lcd.backlight();
+    
+  lcd.begin(16,4);               // initialize the lcd 
+
+
+
+  lcd.home ();                   // go home
+  lcd.print("Hello, ARDUINO ");  
+  lcd.setCursor ( 0, 1 );        // go to the next line
+  lcd.print (" FORUM - fm   ");      
+
 }
 
 void loop() {
