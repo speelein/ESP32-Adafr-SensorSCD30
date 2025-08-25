@@ -3,16 +3,18 @@
 // Basic demo for readings from Adafruit SCD30
 #include <Adafruit_SCD30.h>
 #include "TCA9548.h"
-
+#include <stdio.h>
 #include <Wire.h>
 #include <LiquidCrystal.h>
-
-
+//#include <AsyncTCP.h>
+#include <SPI.h>
+#include <WiFiNINA.h>
+#include <ArduinoOTA.h>
 #define   CONTRAST_PIN   9
 #define   BACKLIGHT_PIN  7
 #define   CONTRAST       110
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2, BACKLIGHT_PIN, POSITIVE );
+//LiquidCrystal lcd(12, 11, 5, 4, 3, 2, BACKLIGHT_PIN, POSITIVE );
 
 
 Adafruit_SCD30  scd30;
@@ -59,16 +61,16 @@ void setup(void) {
 
   //lcd.setBacklightPin ( BACKLIGHT_PIN, POSITIVE );
   //lcd.setBacklight ( HIGH );
-  lcd.backlight();
+  //lcd.backlight();
     
-  lcd.begin(16,4);               // initialize the lcd 
+  //lcd.begin(16,4);               // initialize the lcd 
 
 
 
-  lcd.home ();                   // go home
-  lcd.print("Hello, ARDUINO ");  
-  lcd.setCursor ( 0, 1 );        // go to the next line
-  lcd.print (" FORUM - fm   ");      
+ // lcd.home ();                   // go home
+//  lcd.print("Hello, ARDUINO ");  
+ // lcd.setCursor ( 0, 1 );        // go to the next line
+//  lcd.print (" FORUM - fm   ");      
 
 }
 
