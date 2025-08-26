@@ -8,8 +8,7 @@
 #include <LiquidCrystal.h>
 //#include <AsyncTCP.h>
 #include <SPI.h>
-#include <WiFiNINA.h>
-#include <ArduinoOTA.h>
+
 #define   CONTRAST_PIN   9
 #define   BACKLIGHT_PIN  7
 #define   CONTRAST       110
