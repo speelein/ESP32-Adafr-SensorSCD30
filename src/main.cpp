@@ -4,11 +4,11 @@
 #include <Adafruit_SCD30.h>
 #include "TCA9548.h"
 #include <stdio.h>
-#include <Wire.h>
+//#include <Wire.h> // Fuer zwei i2c Kanaele
 #include <LiquidCrystal.h>
 //#include <AsyncTCP.h>
 #include <SPI.h>
-
+//#include <ArduinoOTA.h>
 #define   CONTRAST_PIN   9
 #define   BACKLIGHT_PIN  7
 #define   CONTRAST       110
