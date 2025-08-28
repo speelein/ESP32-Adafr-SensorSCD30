@@ -19,7 +19,7 @@
 Adafruit_SCD30  scd30;
 
 
-TCA9548 MP(0x70);
+//TCA9548 MP(0x70);
 
 uint8_t channels = 0;
 
@@ -27,9 +27,9 @@ uint8_t channels = 0;
 
 // login
 // WLAN SSID und Password
-const char *host = "esp32";
-const char *ssid = "5GH";
-const char *password = "112330720040719440";
+//const char *host = "esp32";
+//const char *ssid = "5GH";
+//const char *password = "112330720040719440";
 
 
 void setup(void) {
@@ -55,8 +55,8 @@ void setup(void) {
   Serial.println(" seconds");
 
 // Switch on the backlight and LCD contrast levels
-  pinMode(CONTRAST_PIN, OUTPUT);
-  analogWrite ( CONTRAST_PIN, CONTRAST );
+  //pinMode(CONTRAST_PIN, OUTPUT);
+  //analogWrite ( CONTRAST_PIN, CONTRAST );
 
   //lcd.setBacklightPin ( BACKLIGHT_PIN, POSITIVE );
   //lcd.setBacklight ( HIGH );
