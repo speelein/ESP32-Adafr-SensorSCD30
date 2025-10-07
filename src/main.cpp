@@ -38,7 +38,7 @@ void setup(void) {
 
   Serial.println("Adafruit SCD30 test!");
 
-  // Try to initialize!
+  // Try to initialize! PIN 2 x I2C und 3,3V und GND
   if (!scd30.begin()) {
     Serial.println("Failed to find SCD30 chip");
     while (1) { delay(10); }
